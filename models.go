@@ -13,6 +13,16 @@ type Address struct {
 	stadt string
 }
 
+
+func newAddress(straße string, stadt string) Address{
+	a := Address{
+		straße,
+		stadt,
+	}
+
+	return a
+}
+
 type Student struct {
 	matnumber int
 	name string
@@ -20,9 +30,29 @@ type Student struct {
 	grades map[string]float32
 } 
 
+func newStudent(matnumber int, name string, address Address, grades map[string]float32) Student{
+	s := Student{
+		matnumber,
+		name,
+		address,
+		grades,
+	}
+
+	return s
+}
+
 type SharedFlat struct{
 	address Address
 	residents []Student
+}
+
+func newFlat(address Address, residents []Student) SharedFlat{
+	flat := SharedFlat{
+		address,
+		residents,
+	}
+
+	return flat
 }
 
 func (s Student) AddGrade(lecture string, grade float32) {
