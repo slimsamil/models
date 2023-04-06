@@ -1,3 +1,3 @@
-module github.com/slimsamil/models.git
+module github.com/slimsamil/models
 
 go 1.20
